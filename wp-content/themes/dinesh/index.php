@@ -5,16 +5,15 @@ get_header();
 
 global $post; 
 
-debug($post);
 
 get_template_part('loop');
 
 
-get_sidebar();
+get_sidebar('home');
 
-get_search_form(); 
+//get_search_form(); 
 
-get_footer('home');
+get_footer();
 
 ?>
 

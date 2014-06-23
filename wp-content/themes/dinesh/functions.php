@@ -33,7 +33,14 @@ class Dnesh{
 
 	function dinesh_theme_init()
 	{
-		add_theme_support( 'post-thumbnails');			
+		add_theme_support( 'post-thumbnails');		
+
+        register_nav_menus( 
+            array(
+                'main_menu' => 'Main Menu',
+                'footer_menu' => 'Footer Menu'
+                ) 
+        );	
 	}
 
 }
@@ -105,4 +112,44 @@ function cn_custom_meeting_template()
     	cn_include_wordpress_template($template);
 	}
 }
+
+
+register_sidebar(
+array(
+'name'=>'Sidebar Home',
+'id' => 'sidebar_home',
+'before_widget' => '<div class="group block-widget  %2$s" id="%1$s">',
+'after_widget' => '</div></div>',
+'before_title' => '<h3>',
+'after_title' => '</h3><div class="block-content">',
+)
+);
+
+
+register_sidebar(
+array(
+'name'=>'Sidebar page',
+'id' => 'sidebar_page',
+'before_widget' => '<div class="group block-widget  %2$s" id="%1$s">',
+'after_widget' => '</div></div>',
+'before_title' => '<h3>',
+'after_title' => '</h3><div class="block-content">',
+)
+);
+
+
+
+register_sidebar(
+array(
+'name'=>'Sidebar footer',
+'id' => 'sidebar_footer',
+'before_widget' => '',
+'after_widget' => '',
+'before_title' => '',
+'after_title' => '',
+)
+);
+
+
+
 ?>
